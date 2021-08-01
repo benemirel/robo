@@ -3,14 +3,22 @@ import Cardlist from './Cardlist';
 import {robots} from './robots';
 import SearchBox from './SearchBox';
 
-const App = ()=> {
+ class App extends React.Component {
+   constructor(){
+     super();
+     this.state ={  robots: robots,
+       searchfield: ''
 
+     }
+   }
+   render(){
   return(
-    <div>
+    <div className='tc'>
     <h1>ROBOTS</h1>
     <SearchBox />
-    <Cardlist robots={robots}/>);
+    <Cardlist robots={this.state.robots}/>);
     </div>);
+}
 }
 
 export default App;
